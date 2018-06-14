@@ -781,8 +781,8 @@ plt.plot(total_false, color = 'g', label='total false')
 mean_sensitivity = list()
 mean_specificity = list()
 for x in range(len(master_false_positive)):
-    mean_sensitivity.append(np.mean(master_true_positive[x]) / (np.mean(master_true_positive[x]) + np.mean(master_false_negative[x])))
-    mean_specificity.append(np.mean(master_true_negative[x]) / (np.mean(master_true_negative[x]) + np.mean(master_false_positive[x])))
+    mean_sensitivity.append(np.mean(master_true_positive[x]) / (np.mean(master_true_positive[x]) + np.mean(master_false_positive[x])))
+    mean_specificity.append(np.mean(master_true_negative[x]) / (np.mean(master_true_negative[x]) + np.mean(master_false_negative[x])))
 ```
 
 
@@ -800,7 +800,7 @@ plt.plot()
 
 
 
-![png](output_8_1.png)
+![png](77.png)
 
 
 
