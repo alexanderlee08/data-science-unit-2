@@ -74,9 +74,9 @@ for cut in range(1, threshold):
         fold_results.append(1 - accuracy / validation_test.shape[0])
         print(cm)
         false_positive.append(cm[0][1])
-        false_negative.append(cm[0][0])
+        false_negative.append(cm[1][0])
         true_positive.append(cm[1][1])
-        true_negative.append(cm[1][0])
+        true_negative.append(cm[0][0])
     master_false_positive.append(false_positive)
     master_false_negative.append(false_negative)
     master_true_positive.append(true_positive)
@@ -781,8 +781,8 @@ plt.plot(total_false, color = 'g', label='total false')
 mean_sensitivity = list()
 mean_specificity = list()
 for x in range(len(master_false_positive)):
-    mean_sensitivity.append(np.mean(master_true_positive[x]) / (np.mean(master_true_positive[x]) + np.mean(master_false_positive[x])))
-    mean_specificity.append(np.mean(master_true_negative[x]) / (np.mean(master_true_negative[x]) + np.mean(master_false_negative[x])))
+    mean_sensitivity.append(np.mean(master_true_positive[x]) / (np.mean(master_true_positive[x]) + np.mean(master_false_negative[x])))
+    mean_specificity.append(np.mean(master_true_negative[x]) / (np.mean(master_true_negative[x]) + np.mean(master_false_positive[x])))
 ```
 
 
