@@ -1,4 +1,8 @@
+I did two things to correct the heteroscedasticity and multivariate non-normality.
 
+To correct the heteroscedasticity I combined two of the variables, TV and Radio.  To fix non-normality I took the square root of newspapers.
+
+This is the result.
 
 ```python
 import math
