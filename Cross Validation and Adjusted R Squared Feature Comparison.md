@@ -1,4 +1,4 @@
-
+This is 
 
 ```python
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -145,46 +145,4 @@ ax.set_xticklabels(["two", "three", "four", "five"])
 
 
 
-![png](output_8_1.png)
-
-
-
-```python
-m_fit4.predict(df_v['Population'].values.reshape(-1, 1))
-```
-
-
-    ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    <ipython-input-74-2b192e87a783> in <module>()
-    ----> 1 m_fit4.predict(df_v['Population'].values.reshape(-1, 1))
-    
-
-    /usr/local/lib/python3.6/site-packages/sklearn/linear_model/base.py in predict(self, X)
-        254             Returns predicted values.
-        255         """
-    --> 256         return self._decision_function(X)
-        257 
-        258     _preprocess_data = staticmethod(_preprocess_data)
-
-
-    /usr/local/lib/python3.6/site-packages/sklearn/linear_model/base.py in _decision_function(self, X)
-        239         X = check_array(X, accept_sparse=['csr', 'csc', 'coo'])
-        240         return safe_sparse_dot(X, self.coef_.T,
-    --> 241                                dense_output=True) + self.intercept_
-        242 
-        243     def predict(self, X):
-
-
-    /usr/local/lib/python3.6/site-packages/sklearn/utils/extmath.py in safe_sparse_dot(a, b, dense_output)
-        138         return ret
-        139     else:
-    --> 140         return np.dot(a, b)
-        141 
-        142 
-
-
-    ValueError: shapes (70,1) and (5,) not aligned: 1 (dim 1) != 5 (dim 0)
-
+![png](output_8_2.png)
