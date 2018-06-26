@@ -1,4 +1,4 @@
-This is 
+This is to compare how having more features changes the adjusted r-squared value and the cross validation.  So what I'm going to do is to generate models with 2, 3, 4 and 5 features and then chart their adjusted r-squared values and cross validation scores.
 
 ```python
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -128,21 +128,28 @@ cv.append(np.mean(cv_score4))
 
 ```python
 fig, ax = plt.subplots()
+plt.title('Adjusted R Squared')
 plt.plot(rsq, label='adjusted rsquared')
+plt.xlabel('number of features')
+plt.ylabel('accuracy')
+ax.xaxis.set_ticks(np.arange(0,4))
+ax.set_xticklabels(["two", "three", "four", "five"])
+plt.show()
+
+fig, ax = plt.subplots()
+plt.title('Cross Validation')
 plt.plot(cv, label='cross validation mean')
 plt.xlabel('number of features')
 plt.ylabel('accuracy')
-plt.legend()
 ax.xaxis.set_ticks(np.arange(0,4))
 ax.set_xticklabels(["two", "three", "four", "five"])
+plt.show()
 ```
 
+![png](adjustedr.png)
+![png](crossval.png)
 
 
+What we have here is a strong match between the features and the predicted values.  It seems to go up and up, perhaps because as crime increases most likely the population also increases.
 
-    [Text(0,0,'two'), Text(0,0,'three'), Text(0,0,'four'), Text(0,0,'five')]
-
-
-
-
-![png](output_8_2.png)
+When we run the cross validation, we see too that also goes dramatically up.  So there appears to be quite a lot of overfitting that is happening with our modeling data.
